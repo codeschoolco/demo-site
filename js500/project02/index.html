@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="demo">
+        <h2>This is a Text Summarization Partial Demo</h2>
+        <button type="button" onclick="loadData()">Summarize</button>
+    </div>
+
+    <script>
+        function loadData() {
+
+            let formData = new FormData();
+            formData.append('key', '12b64e99fb21c16053696141f8312424');
+            formData.append('of', 'json');
+            formData.append('txt', 'Apple only very recently began the transition away from Intel’s x86 chips to its own custom M1, ending a long-standing partnership. The Cupertino-based tech giant announced a MacBook Pro, a MacBook Air and iMac in November last year that ran on the in-house chip and said that they would eventually have all their Macs running on their own custom chip but the transition would take some time.');
+            formData.append('sentences', '1');
+
+            fetch(
+                'https://api.meaningcloud.com/summarization-1.0',
+                { body: formData, method: "post" }
+            )
+                .then(response => {
+                    if (response.ok) return response.json();
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    console.log(data);
+                    console.log(data.summary);
+                });
+        }
+    </script>
+
+</body>
+
+</html>
