@@ -5,15 +5,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      console.log("Entered")
-      window.addEventListener( "message",
-          function (e) {
-                if(e.origin !== 'B'){ return; }
-                alert(e.data);
-          },
-          false);
+      console.log("Entered");
+      window.addEventListener(
+        "message",
+        function (e) {
+          console.log("Recieved message");
+          if (e.origin !== "http://localhost:8080") {
+            console.log("yes");
+            return;
+          } else {
+            console.log("else");
+          }
+          alert(e.data);
+        },
+        false
+      );
     </script>
   </head>
   <body>
+    <h1>Sample Page</h1>
   </body>
 </html>
