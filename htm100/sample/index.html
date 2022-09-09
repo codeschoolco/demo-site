@@ -5,13 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      //   console.log("Entered");
-      //   top.postMessage('hello', 'http://localhost:8080/author/home');
-      //   console.log("Message Sent")
-      document.addEventListener("DOMContentLoaded", function (event) {
-        console.log("DOM loaded")
-        // your code here
-
+      function check() {
         window.addEventListener(
           "message",
           function (e) {
@@ -26,10 +20,18 @@
           },
           false
         );
-      });
+      }
+      //   console.log("Entered");
+      //   top.postMessage('hello', 'http://localhost:8080/author/home');
+      //   console.log("Message Sent")
+      //   document.addEventListener("DOMContentLoaded", function (event) {
+      // console.log("DOM loaded")
+      // your code here
+
+      //   });
     </script>
   </head>
-  <body>
+  <body onload="check()">
     <h1>Sampe Page</h1>
   </body>
 </html>
