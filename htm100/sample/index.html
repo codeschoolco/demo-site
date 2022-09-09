@@ -9,7 +9,7 @@
           "message",
           function (e) {
             console.log("Recieved message");
-            if (e.origin !== "http://localhost:8080/author/home") {
+            if (e.origin !== "http://localhost:8080") {
               return;
             } else {
               console.log("date", e.data);
