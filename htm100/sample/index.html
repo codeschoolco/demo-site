@@ -5,23 +5,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-    //   console.log("Entered");
-    //   top.postMessage('hello', 'http://localhost:8080/author/home');
-    //   console.log("Message Sent")
-      window.addEventListener(
-        "message",
-        function (e) {
-          console.log("Recieved message");
-          if (e.origin !== "https://demo.codeschool.co/htm100/sample/") {
-            console.log("yes");
-            return;
-          } else {
-            console.log("else");
-          }
-          alert(e.data);
-        },
-        false
-      );
+      //   console.log("Entered");
+      //   top.postMessage('hello', 'http://localhost:8080/author/home');
+      //   console.log("Message Sent")
+      document.addEventListener("DOMContentLoaded", function (event) {
+        // your code here
+
+        window.addEventListener(
+          "message",
+          function (e) {
+            console.log("Recieved message");
+            if (e.origin !== "https://demo.codeschool.co/htm100/sample/") {
+              console.log("yes");
+              return;
+            } else {
+              console.log("else");
+            }
+            alert(e.data);
+          },
+          false
+        );
+      });
     </script>
   </head>
   <body>
